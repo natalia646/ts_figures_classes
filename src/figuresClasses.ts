@@ -12,7 +12,6 @@ export interface Figure {
 export class Triangle implements Figure {
   shape = Shape.triangle;
 
-  // eslint-disable-next-line no-useless-constructor
   constructor(
     public color: string,
     public a: number,
@@ -22,11 +21,11 @@ export class Triangle implements Figure {
     const values: number[] = [a, b, c].sort((x: number, y: number) => x - y);
 
     if (values[0] + values[1] <= values[2]) {
-      throw new Error('Values is incorrect');
+      throw new Error('Values are incorrect');
     }
 
     if (values[0] <= 0 || values[1] <= 0 || values[2] <= 0) {
-      throw new Error('Value is less than 0 or equal 0');
+      throw new Error('Value is less than or equal to 0');
     }
   }
 
@@ -41,13 +40,12 @@ export class Triangle implements Figure {
 export class Circle implements Figure {
   shape = Shape.circle;
 
-  // eslint-disable-next-line no-useless-constructor
   constructor(
     public color: string,
     public radius: number,
   ) {
     if (this.radius <= 0) {
-      throw new Error('Radius is less than 0 or equal 0');
+      throw new Error('Radius is less than or equal to 0');
     }
   }
 
@@ -61,18 +59,17 @@ export class Circle implements Figure {
 export class Rectangle implements Figure {
   shape = Shape.rectangle;
 
-  // eslint-disable-next-line no-useless-constructor
   constructor(
     public color: string,
     public width: number,
     public height: number,
   ) {
     if (this.width <= 0) {
-      throw new Error('Width is less than 0 or equal 0');
+      throw new Error('Width is less than or equal to 0');
     }
 
     if (this.height <= 0) {
-      throw new Error('Heigth is less than 0 or equal 0');
+      throw new Error('Height is less than or equal to 0');
     }
   }
 
